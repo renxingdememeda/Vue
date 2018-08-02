@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue2.js"></script>
+    <style>
+        .a{
+            color:pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img :src="ss" alt="">
+        <a :href="'del.html?id='+id">跳转</a>
+        <p :class="{'a':true}">颜色</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                ss:'./avatar.jpg',
+                id:1,
+            }
+        });
+    </script>
+</body>
+</html>

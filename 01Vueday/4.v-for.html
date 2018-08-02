@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue2.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-for="item in user" :key="item.name">{{item.name}}:{{item.age}}</p>
+        <p v-for="(item,index) in user" :key="index">{{item.name}}:{{item.age}}--{{index}}</p>
+
+        
+        <p v-for="value in boss" :key="value">{{value}}</p>
+        <div v-for="(value,key,index) in boss" :key="value">{{key}}:{{value}} -- {{index}}</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                user:[
+                    {name:'jack',age:18},
+                    {name:'tql',age:21}
+                ],
+                boss:{
+                    name:'haha',
+                    age:20,
+                }
+            }
+        })
+    </script>
+</body>
+</html>

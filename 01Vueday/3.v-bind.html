@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/vue2.js"></script>
+    <style>
+        .red{
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{name}}
+        <img :src="avatar" alt="">
+        <a :href="'del.php?id='+id">删除</a>
+        <p :class="{'red':true}">红色字体</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                name:'jack',
+                avatar:'./avatar.jpg',
+                id:1
+            }
+        })
+    </script>
+</body>
+</html>

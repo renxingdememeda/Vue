@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>{{name}}</p>
+            <p>{{age}}</p>
+
+            <!-- 插值表的是用法：表达式/三元运算符 -->
+            <h1>表达式</h1>
+            <p>{{'马'+name}}</p>
+            <p>{{age+1}}</p>
+            <p>{{name.split('').reverse('').join('')}}</p>
+
+            <h1>三元运算符</h1>
+            <p>{{age>=18?'已成年':'未成年'}}</p>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    name:'mabo',
+                    age:20,
+                }
+            })
+        </script>
+    </body>
+</html>

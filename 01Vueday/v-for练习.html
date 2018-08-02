@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 数组 -->
+            <p v-for="(item,index) in user">{{item.name}}:{{item.age}}--{{index}}</p>
+            <!-- 对象 -->
+            <p v-for="(value,key,index) in boss">{{key}}:{{value}}--{{index}}</p>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    user:[
+                        {name:'jack',age:18},
+                        {name:'rose',age:20}
+                    ],
+                    boss:{
+                        name:'tql',
+                        age:21
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

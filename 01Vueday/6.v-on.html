@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>{{name}}</p>
+            <button v-on:click="change">点击改变</button>
+            <button @click="change">简写</button>
+            <button @click="ee('222')">传参</button>
+            <button @click="getEvent($event)">事件对象</button>
+            <a href="www.baidu.com" @click.prevent="change">跳转</a>
+            <input v-on:keyup.enter="submit">
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    name:'jack'
+                },
+                methods:{
+                    change(){
+                        this.name='haha'
+                    },
+                    ee(mes){
+                        this.name=mes
+                    },
+                    getEvent(e){
+                        console.log(e)
+                    },submit () {
+                        console.log('submit');
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- v-text也可以渲染文本，凡是以v-开头的就是指令，指令的功能就是增强html标签的功能 -->
+            <!-- 和插值表达式区别：插值写在innerHTML位置， v-text写在标签属性位置，平时使用{{}} -->
+            <div v-text="name"></div>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    name:'jack',
+                }
+            })
+        </script>
+    </body>
+</html>

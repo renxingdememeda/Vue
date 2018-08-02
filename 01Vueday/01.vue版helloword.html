@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入vue文件 -->
+    <script src="./vue2.js"></script>
+</head>
+<div id="app">
+    <!-- 使用{{}}展示文本 -->
+    <p>{{msg}}</p>
+</div>
+<body>
+    <script>
+        // 创建vue实例 监管html代码
+        var vm = new Vue({
+            // el指示监视范围
+            el:'#app',
+            // data属性保存数据
+            data:{
+                msg:'hello word',
+            }
+        });
+    </script>
+</body>
+</html>

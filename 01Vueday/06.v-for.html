@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- v-for渲染数组
+            1. 在标签的属性位置写上v-for="item in arr" item表示数组中的每一项，这个名字可以随意取，arr表示需要遍历的数组
+            
+            2. 在标签的属性位置写上v-for="(item, index) in arr" index表示数组项的索引值 -->
+            <h1>v-for="item in arr"</h1>
+            <p v-for="item in user" :key="item.name">{{item.name}}:{{item.age}}</p>
+
+            <p v-for="(item,index) in user" :key="index">{{item.name}}:{{item.age}}索引{{index}}</p>
+            <!-- v-for渲染对象
+            1. 在标签的属性位置写上v-for="value in obj" value表示对象键的值，这个名字可以随便取，obj表示需要遍历的对象
+
+            2. 在标签的属性位置写上v-for="(value, key, index) in obj" key表示对象的键 -->
+            <h1>v-for="value in obj"</h1>
+            <p v-for="value in boss" key="value">{{value}}</p>
+
+            <p v-for="(value,key,index)in boss" key="value">{{key}}:{{value}} -- {{index}}</p>
+
+            <!-- 注意，以下两种情况不会触发视图更新
+            1. 当使用数组的length属性去改变数组的时候，不会触发视图更新
+            2. 使用数组下标的方式去改变数组的时候，也不会触发视图更新 -->
+            <!-- 解决上述问题：
+            1. 使用Vue.set(arr, index, newVal) arr是需要改变的数组，index是数组里面的项， newVal是改变后的值
+            //Vue.set(vm.user,0,{name:'aa',age:'20'})
+            2. Array.prototype.splice() -->
+            <!-- vm.user.splice(0,1) -->
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    user:[
+                        {name:'jack',age:18},
+                        {name:'rose',age:20},
+                    ]
+                    ,boss:{
+                        name:'mabo',
+                        age:20,
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
